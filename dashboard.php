@@ -11,11 +11,16 @@ session_start();
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="dashboardui.css" type="text/css">
+        <link rel="stylesheet" href="dashboard-ui.css" type="text/css">
     </head>
     <body>
-        <h1> Dashboard </h1>
-        <p><?php echo $user_data['user_name'];?></p>
+        <h1><?php echo $user_data['user_name']."'s";?> Dashboard </h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.php">Home</a></li>
+                <li><a href="setting.php">Settings</a></li>
+            </ul>
+        </nav>
         <a href="logout.php">logout</a>
     </body>
 </html>

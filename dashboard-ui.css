@@ -8,9 +8,6 @@ body {
     font-family: sans-serif;
     background-color: #e0e5ec;
     color: #5c3d94;
-    display:grid;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
 }
 
