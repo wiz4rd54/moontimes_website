@@ -12,15 +12,30 @@ session_start();
     <head>
         <title>Dashboard</title>
         <link rel="stylesheet" href="dashboard-ui.css" type="text/css">
+        <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
+        <script src="todo.js"></script>
     </head>
     <body>
-        <h1><?php echo $user_data['user_name']."'s";?> Dashboard </h1>
-        <nav>
+        <nav class="navbar">
+            <h1 id="username"><?php echo $user_data['user_name']."'s";?> Dashboard </h1>
             <ul>
-                <li><a href="dashboard.php">Home</a></li>
-                <li><a href="setting.php">Settings</a></li>
+                <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
+                <li><a href="setting.php"><i class="fas fa-cog"></i></a></li>
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </nav>
-        <a href="logout.php">logout</a>
+        <main>
+            <section class="quickstat">
+                <div class="stats"> Event Budget </div>
+                <div class="stats"> Cost </div>
+                <div class="stats"> Date </div>
+            </section>
+            <section class="todo">
+
+            </section>
+            <section class="chat">
+
+            </section>
+        </main>
     </body>
 </html>
