@@ -36,10 +36,12 @@ session_start();
     <head>
         <title>Signup</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="signupstyle.css" type="text/css">        
+        <link rel="stylesheet" href="signup-style.css" type="text/css">        
     </head>
     <body>
-        <form method="post" class="form">
+        <div class="container">
+            <div class="div1"></div>
+        <form method="post" clss="form">
             <input class="input" type="text" placeholder="Name" name="name" required>
             <input class="input" type="contact" placeholder="Phone number" name="phone" required>
             <input class="input" type="email" placeholder="E-mail" name="email" required>
@@ -48,5 +50,7 @@ session_start();
             <input class="input" type="password" placeholder="Your first school you attended (for security)" name="security" required> 
             <input class="btn" type="submit" value="Sign-up"> 
         </form>
+
+        </div>
     </body>
 </html>
