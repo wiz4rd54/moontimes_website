@@ -22,6 +22,7 @@ session_start();
                 <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
                 <li><a href="setting.php"><i class="fas fa-cog"></i></a></li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
+                <li><a href="newevent.php"> NEW EVENT </a></li>
             </ul>
         </nav>
         <main>
