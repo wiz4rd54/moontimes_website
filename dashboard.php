@@ -11,7 +11,7 @@ session_start();
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="dashboard-ui.css" type="text/css">
+        <link rel="stylesheet" href="dashboardui.css" type="text/css">
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
         <script src="todo.js"></script>
     </head>
@@ -22,7 +22,7 @@ session_start();
                 <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
                 <li><a href="setting.php"><i class="fas fa-cog"></i></a></li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
-                <li><a href="newevent.php"> NEW EVENT </a></li>
+                <li><a href="newevent.php"><i class="fas fa-plus"></i></a></li>
             </ul>
         </nav>
         <main>
