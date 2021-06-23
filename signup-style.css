@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -5,7 +8,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: "Roboto Slab";
     background-color: #e0e5ec;
     color: #5c3d94;
     display: flex;
@@ -15,27 +18,60 @@ body {
 }
 
 .container {
+  width: 80%;
+  min-height: 80vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 10px;
 }
 
-.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div1 { 
+  grid-area: 1 / 1 / 2 / 2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.div1 img {
+  height: 200px; 
+  width: 200px; 
+  margin:0;
+}
+
+.div1 h1 {
+  font-family: "Satisfy";
+  letter-spacing: 2px;
+  color: #5c3d94;
+  margin: 20px;
+}
+
+.div1 p {
+  margin: 2px;
+}
+
+.div1 a {
+  transition: 0.4s;
+}
+
+.div1 p a:hover {
+  text-decoration: none;
+  color: #000000;
+}
 
 .form {
     grid-area: 1 / 2 / 2 / 3;
-    height: 90%;
-    width: 75%;
-    border-radius: 10px;
+    height: 100%;
+    width: 100%;
     background: #e0e5ec;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: -10px -10px 20px 0 rgba(255, 255, 255, 0.6),
-      10px 10px 25px 0 rgba(0, 0, 0, 0.1);
     transition: 0.4s;
+    box-shadow: -10px -10px 20px 0 rgba(255, 255, 255, 0.5),
+    10px 10px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 .form input {
@@ -50,25 +86,16 @@ body {
     border-radius: 5px;
     width: 70%;
     color: #5c3d94;
-    font-family: monospace;
+    font-family: "Roboto Slab";
+    letter-spacing: 2px;
     box-shadow: inset -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
-      inset 6px 6px 25px 0 rgba(0, 0, 0, 0.1);
+    inset 6px 6px 25px 0 rgba(0, 0, 0, 0.1);
     transition: 0.4s;
 }
 
 .input::placeholder {
-    color: #5c3d94;
+    color: #705d92;
     font-weight: bold;
-}
-
-.form h1 {
-    background: #e0e5ec;
-    color: #5c3d94;
-    margin: 20px;
-    padding: 15px 20px;
-    border-radius: 15px;
-    box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
-      6px 6px 25px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn {
@@ -86,4 +113,116 @@ body {
 
 .btn:hover {
     min-width: 180px;
+}
+
+.alert {
+  position: absolute;
+  top: 10;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+/* ---------------------- Media query ----------------- */
+
+@media only screen and (max-width: 600px) 
+{
+  body {
+    font-size:0.8rem;
+  }
+  .container {
+    width: 90%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }  
+
+  .div1 {
+    margin-bottom: 20px;
+  }
+
+  .form {
+    margin-bottom: 20px;
+  }
+
+  .input {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 768px) 
+{
+  body {
+    font-size:1.3rem;
+  }
+
+  .container {
+    width: 90%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }  
+
+  .div1 {
+    margin-bottom: 20px;
+  }
+
+  .div1 img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .form {
+    margin-bottom: 20px;
+  }
+
+  .input {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 200px;
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) 
+{
+  body {
+    font-size:1.4rem;
+  }
+
+  .container {
+    width: 90%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }  
+
+  .div1 {
+    margin-bottom: 20px;
+  }
+
+  .div1 img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .form {
+    margin-bottom: 20px;
+  }
+
+  .input {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 200px;
+    font-size: 1.6rem;
+  }
 }

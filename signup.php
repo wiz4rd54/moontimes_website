@@ -26,7 +26,7 @@ session_start();
         }
         else
         {
-            echo "Please enter some valid information !";
+            echo "<div class='alert'> Please enter valid information. </div>";
         }
     }
 ?>
@@ -40,17 +40,21 @@ session_start();
     </head>
     <body>
         <div class="container">
-            <div class="div1"></div>
-        <form method="post" clss="form">
-            <input class="input" type="text" placeholder="Name" name="name" required>
-            <input class="input" type="contact" placeholder="Phone number" name="phone" required>
-            <input class="input" type="email" placeholder="E-mail" name="email" required>
-            <input class="input" type="text" placeholder="username" name="user_name" required>
-            <input class="input" type="password" placeholder="password" name="password" required>
-            <input class="input" type="password" placeholder="Your first school you attended (for security)" name="security" required> 
-            <input class="btn" type="submit" value="Sign-up"> 
-        </form>
-
+            <div class="div1">
+                <img src="images/logo4.svg">
+                <h1>Sign up </h1>
+                <p> Welcome ! We are glad to see you here </p>
+                <p class="login"> Already a user ? <a href="login.php"> Login </a>
+            </div>
+            <form method="post" class="form">
+                <input class="input" type="text" placeholder="Name" name="name" required>
+                <input class="input" type="contact" placeholder="Phone number" name="phone" required>
+                <input class="input" type="email" placeholder="E-mail" name="email" required>
+                <input class="input" type="text" placeholder="Username" name="user_name" required>
+                <input class="input" type="password" placeholder="Password" name="password" required>
+                <input class="input" type="password" placeholder="The first school you attended" name="security" required> 
+                <input class="btn" type="submit" value="Sign-up"> 
+            </form>
         </div>
     </body>
 </html>

@@ -30,11 +30,27 @@ session_start();
                     }
                 }
             }
-            echo " Wrong username or password !";
+            $query = "select * from users where email = '$user_name' limit 1";
+            $result = mysqli_query($con,$query);
+            if ($result)
+            {
+                if($result && mysqli_num_rows($result)>0)
+                {
+                    $user_data = mysqli_fetch_assoc($result);
+                    
+                    if($user_data['password'] === $password)
+                    {
+                        $_SESSION['user_id']=$user_data['user_id'];
+                        header("Location: dashboard.php");
+                        die;
+                    }
+                }
+            }
+            echo "<div class='alert'> Wrong Credentials ! Try again. </div>";
         }
         else
         {
-            echo "<div class='alert'> Username of password entered is not correct </div>";
+            echo "<div class='alert'> Username or password entered is not correct </div>";
         }
     }
 ?>
@@ -44,15 +60,16 @@ session_start();
     <head>
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="login_style.css" type="text/css">
+        <link rel="stylesheet" href="loginstyle.css" type="text/css">
     </head>
     <body>
         <form method="post" class="form">
-            <img src="images/logo4.svg" style="height: 150px; width: 150px; margin:0;">
-            <input class="input" type="text" placeholder="username" name="user_name">
-            <input class="input" type="password" placeholder="password" name="password"> 
+            <img src="images/logo4.svg">
+            <h1> Login </h1>
+            <input class="input" type="text" placeholder="Username or Email" name="user_name">
+            <input class="input" type="password" placeholder="Password" name="password"> 
             <input class="btn" type="submit" value="Login"> 
-            <a href="forgotpassword.php" class="fpwd"> Forgot Password </a>
+            <a href="forgot.php" class="fpwd"> Forgot Password </a>
             <a href="signup.php" style="margin-top:10px;" class="signup">Sign-up</a>
         </form>
     </body>
