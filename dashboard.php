@@ -5,6 +5,18 @@ session_start();
     include("connection.php");
     include("function.php");
     $user_data = check_login($con);
+    $user_id = $user_data['user_id'];
+    
+    $query = "SELECT * FROM events WHERE user_id ='$user_id'";
+    $result = mysqli_query($con, $query);
+    $events = mysqli_fetch_all($result);
+    foreach ($events as $event)
+    {   
+        foreach ($event as $e)
+        {
+            echo $e;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +43,10 @@ session_start();
                 <div class="stats"> Cost </div>
                 <div class="stats"> Date </div>
             </section>
-            <section class="todo">
-
+            <section class="events">
+                <ul class="events list">
+                    <li> 
+                </ul>
             </section>
             <section class="chat">
 
