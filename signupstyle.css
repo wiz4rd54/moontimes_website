@@ -17,6 +17,8 @@ body {
     min-height: 100vh;
 }
 
+/* ------------------------ Main container ------------------------------- */
+
 .container {
   width: 80%;
   min-height: 80vh;
@@ -25,7 +27,7 @@ body {
   grid-template-rows: 1fr;
   grid-column-gap: 10px;
 }
-
+              /*------------- Info section --------------- */
 .div1 { 
   grid-area: 1 / 1 / 2 / 2; 
   display: flex;
@@ -59,7 +61,7 @@ body {
   text-decoration: none;
   color: #000000;
 }
-
+                    /* ---------------- Main form -------------- */ 
 .form {
     grid-area: 1 / 2 / 2 / 3;
     height: 100%;
@@ -90,7 +92,7 @@ body {
     letter-spacing: 2px;
     box-shadow: inset -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
     inset 6px 6px 25px 0 rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
+    transition: 0.5s;
 }
 
 .input::placeholder {
@@ -98,21 +100,33 @@ body {
     font-weight: bold;
 }
 
+.input:hover {
+    box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+    6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input:focus {
+    box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+    6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
 .btn {
     border: none;
     padding: 15px;
     min-width: 150px;
     border-radius: 15px;
-    background: #e0e5ec;
+    background-color: #5c3d94;
     font-weight: bold;
-    color: #5c3d94;
+    font-size: 20px;
+    color: #e0e5ec;
     box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
-      6px 6px 25px 0 rgba(0, 0, 0, 0.1);
+      6px 6px 10px 0 rgba(0, 0, 0, 0.5);
     transition: 0.4s;
 }
 
 .btn:hover {
     min-width: 180px;
+    cursor: pointer;
 }
 
 .alert {
@@ -124,34 +138,7 @@ body {
 
 /* ---------------------- Media query ----------------- */
 
-@media only screen and (max-width: 600px) 
-{
-  body {
-    font-size:0.8rem;
-  }
-  .container {
-    width: 90%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }  
-
-  .div1 {
-    margin-bottom: 20px;
-  }
-
-  .form {
-    margin-bottom: 20px;
-  }
-
-  .input {
-    font-size: 0.8rem;
-  }
-}
-
-@media only screen and (min-width: 768px) 
+@media only screen and (max-width: 768px) 
 {
   body {
     font-size:1.3rem;
@@ -180,49 +167,11 @@ body {
   }
 
   .input {
-    font-size: 1.3rem;
+    font-size: 0.7rem;
   }
 
   .btn {
     width: 200px;
-    font-size: 1.4rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) 
-{
-  body {
-    font-size:1.4rem;
-  }
-
-  .container {
-    width: 90%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }  
-
-  .div1 {
-    margin-bottom: 20px;
-  }
-
-  .div1 img {
-    width: 300px;
-    height: 300px;
-  }
-
-  .form {
-    margin-bottom: 20px;
-  }
-
-  .input {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    width: 200px;
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }

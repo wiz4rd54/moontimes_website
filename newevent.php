@@ -13,13 +13,15 @@ session_start();
         $event_date = $_POST['event_Date'];
         $event_place = $_POST['event_Place'];
         $event_budget = $_POST['event_Budget'];
-
-        $query = "UPDATE `users` SET `eventType`='$event_type',`eventDate`='$event_date',`eventPlace`='$event_place',`eventBudget`='$event_budget' WHERE `user_id`='$user_id'";
-        $result = $con->query($query);
-
+        $event_des = $_POST['event_Description'];
+        $event_id = random_num(20);
+        $query = "INSERT INTO `events` (`user_id`,`event_id`,`eventType`,`eventDate`,`eventPlace`,`eventBudget`,`eventDescription`) VALUES ('$user_id','$event_id','$event_type','$event_date','$event_place','$event_budget','$event_des')";
+        $result = mysqli_query($con,$query);
         if ($result)
         {
-            echo "DONE";
+            echo '<div class="alert"> Entered data </div>';
+            header("Location: dashboard.php");
+            die;
         }
     }
 ?>
@@ -29,15 +31,21 @@ session_start();
     <head>
         <title>Signup</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="signupstyle.css" type="text/css">        
+        <link rel="stylesheet" href="newevent.css" type="text/css">        
+        <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <nav>
+            <p> <a href="dashboard.php"> <i class="fas fa-arrow-circle-left"></i> Back </a></p>
+        </nav>
         <form method="post" class="form">
-            <input class="input" type="text" placeholder="eg Corporate event, birthday etc." name="event_Type" required>
+            <h1> Create New Event </h1>
+            <input class="input" type="text" placeholder="Event name" name="event_Type" required>
             <input class="input" type="date" name="event_Date" required>
             <input class="input" type="text" placeholder="Place of event" name="event_Place" required>
-            <input class="input" type="number" style="-webkit-appearance:none; -moz-appearance:textfield" name="event_Budget" required>
-            <input class="btn" type="submit" value="Create new event"> 
+            <input class="input" type="number" style="-webkit-appearance:none; -moz-appearance:textfield" placeholder="Budget" name="event_Budget" required>
+            <input class="input" type="text" placeholder="Description (optional)" name="event_Description">
+            <input class="btn" type="submit" value="Create"> 
         </form>
     </body>
 </html>

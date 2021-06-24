@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Slab";
+    background-color: #e0e5ec;
+    color: #5c3d94;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* --------------------------------- Back link -------------------- */
+nav {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 5px 8px;
+    box-shadow: -6px -6px 10px 0 rgba(255, 255, 255, 0.7),
+    6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #705d92;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e0e5ec;
+}
+
+/* -------------------------------- Main form ---------------------------------- */ 
+.form {
+    height: 80vh;
+    width: 80%;
+    background: #e0e5ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+    box-shadow: -10px -10px 25px 0 rgba(255, 255, 255, 0.5),
+    10px 10px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form input {
+    margin: 10px 10px;
+}
+
+.input {
+    padding: 13px 15px;
+    border: none;
+    outline: none;
+    background: #e0e5ec;
+    border-radius: 5px;
+    width: 70%;
+    color: #5c3d94;
+    font-family: "Roboto Slab";
+    letter-spacing: 2px;
+    box-shadow: inset -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
+    inset 6px 6px 25px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+
+.input::placeholder {
+    color: #705d92;
+    font-weight: bold;
+}
+
+.input:hover {
+    box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+    6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input:focus {
+    -webkit-appearance:none; 
+    -moz-appearance:textfield;
+    box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+    6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input:nth-of-type(4) {
+    -webkit-appearance:none; 
+    -moz-appearance:textfield;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    min-width: 150px;
+    border-radius: 15px;
+    background-color: #5c3d94;
+    font-weight: bold;
+    font-size: 15px;
+    color: #e0e5ec;
+    box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
+      6px 6px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.4s;
+}
+
+.btn:hover {
+    min-width: 180px;
+    cursor: pointer;
+}
+
+.alert {
+  position: absolute;
+  top: 10;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+/* ---------------------- Media query ----------------- */
+
+@media only screen and (max-width: 768px) 
+{
+  body {
+    font-size:1.3rem;
+  }
+
+  .form {
+    margin-bottom: 20px;
+  }
+
+  .input {
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    width: 200px;
+    font-size: 1rem;
+  }
+}
