@@ -13,7 +13,7 @@ session_start();
         if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
         {
             // read from database;
-            $query = "select * from users where user_name = '$user_name' limit 1";
+            $query = "select * from user where user_name = '$user_name' limit 1";
             $result  = mysqli_query($con,$query);
 
             if ($result)
@@ -30,7 +30,7 @@ session_start();
                     }
                 }
             }
-            $query = "select * from users where email = '$user_name' limit 1";
+            $query = "select * from user where email = '$user_name' limit 1";
             $result = mysqli_query($con,$query);
             if ($result)
             {
@@ -60,7 +60,7 @@ session_start();
     <head>
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="login-style.css" type="text/css">
+        <link rel="stylesheet" href="loginstyle.css" type="text/css">
     </head>
     <body>
         <form method="post" class="form">

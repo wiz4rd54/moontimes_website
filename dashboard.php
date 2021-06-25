@@ -7,7 +7,7 @@ session_start();
     $user_data = check_login($con);
     $user_id = $user_data['user_id'];
     
-    $query = "SELECT * FROM events WHERE user_id ='$user_id'";
+    /*$query = "SELECT * FROM events WHERE user_id ='$user_id'";
     $result = mysqli_query($con, $query);
     $events = mysqli_fetch_all($result);
     foreach ($events as $event)
@@ -16,7 +16,7 @@ session_start();
         {
             echo $e;
         }
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>

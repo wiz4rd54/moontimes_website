@@ -68,7 +68,15 @@ body {
   
 .input:focus {
   width: 200px;
+  box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+  6px 6px 25px 0 rgba(0, 0, 0, 0.2);
 }
+
+.input:hover {
+  box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+  6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
 .input::placeholder {
   color: #705d92;
   font-weight: bold;

@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "Moontimes_Login_Database";
+$dbname = "Moontimes_Database";
 
 if (!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 {
