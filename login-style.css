@@ -1,6 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
+
+:root {
+  --primary: #e0e5ec;
+  --secondary: #5c3d94;
+  --form-shadow: -10px -10px 25px 0 rgba(255, 255, 255, 0.6),
+    10px 10px 25px 0 rgba(0, 0, 0, 0.1);
+  --input-shadow: inset -4px -4px 15px 0 rgba(255, 255, 255, 0.6),
+    inset 4px 4px 15px 0 rgba(0, 0, 0, 0.1);
+  --focus-shadow: -8px -8px 20px 0 rgba(255, 255, 255, 0.7),
+    8px 8px 20px 0 rgba(0, 0, 0, 0.2);
+  --btn-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
+    6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+  --a-color: rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] {
+  --primary: #333;
+  --secondary: #e0e5ec;
+  --form-shadow: 30px 30px 77px #222222,
+    -30px -30px 77px #444444;
+  --input-shadow: inset 4px 4px 15px #222222,
+    inset -4px -4px 15px #444444;
+  --focus-shadow: 8px 8px 20px #222222,
+  -8px -8px 20px #444444;
+  --btn-shadow: 30px 30px 77px #222222,
+  -30px -30px 77px #444444;
+  --a-color : #fff;
+} 
+
 * {
   padding: 0;
   margin: 0;
@@ -9,8 +38,8 @@
   
 body {
   font-family: sans-serif;
-  background-color: #e0e5ec;
-  color: #5c3d94;
+  background-color: var(--primary);
+  color: var(--secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,13 +50,12 @@ body {
   height: 80vh;
   width: 350px;
   border-radius: 10px;
-  background: #e0e5ec;
+  background: var(--primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: -10px -10px 20px 0 rgba(255, 255, 255, 0.6),
-    10px 10px 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--form-shadow);
   transition: 0.4s;
 }
 
@@ -41,7 +69,7 @@ body {
 .form h1 {
   font-family: "Satisfy";
   letter-spacing: 2px;
-  color: #5c3d94;
+  color: var(--secondary);
   margin: 20px;
 }
 
@@ -55,30 +83,27 @@ body {
   padding: 13px 15px;
   border: none;
   outline: none;
-  background: #e0e5ec;
+  background: var(--primary);
   border-radius: 15px;
   width: 180px;
-  color: #5c3d94;
+  color: var(--secondary);
   font-family: "Roboto Slab";
   letter-spacing: 1px;
-  box-shadow: inset -6px -6px 25px 0 rgba(255, 255, 255, 0.6),
-    inset 6px 6px 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--input-shadow);
   transition: 0.4s;
 }
   
 .input:focus {
   width: 200px;
-  box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
-  6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: var(--focus-shadow);
 }
 
 .input:hover {
-  box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.7),
-  6px 6px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: var(--focus-shadow);
 }
 
 .input::placeholder {
-  color: #705d92;
+  color: var(--secondary);
   font-weight: bold;
 }
 
@@ -87,11 +112,11 @@ body {
   padding: 15px;
   min-width: 150px;
   border-radius: 15px;
-  background-color: #5c3d94;
+  background-color: var(--secondary);
   font-weight: bold;
-  color: #e0e5ec;
-  box-shadow: -6px -6px 25px 0 rgba(255, 255, 255, 0.9),
-    6px 6px 25px 0 rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  color: var(--primary);
+  box-shadow:var(--btn-shadow);
   transition: 0.4s;
 }
 
@@ -102,22 +127,25 @@ body {
 
 .form a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--a-color);
   margin: 1px;
 }
 
 .form a:hover {
-  color: #000;
   text-decoration: underline;
-  text-decoration-color: #000;
+  text-decoration-color: var(--a-color);
 }
 
 .alert {
+  color: var(--secondary);
   position: absolute;
   top: 10;
   padding: 5px;
   border: 1px solid #000;
 }
+
+/* ---------------------------------- Dark mode ---------------------------------- */
+
 
 /* ----------------------- Media Query ----------------------------------- */
 
