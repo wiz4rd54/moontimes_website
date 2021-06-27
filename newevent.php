@@ -19,7 +19,6 @@ session_start();
         $result = mysqli_query($con,$query);
         if ($result)
         {
-            echo '<div class="alert"> Entered data </div>';
             header("Location: dashboard.php");
             die;
         }
