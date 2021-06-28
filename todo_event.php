@@ -5,15 +5,15 @@ session_start();
   include("connection.php");
   include("function.php");
   $user_data = check_login($con);
-  $event_data = check_login($con);
   $user_id = $user_data['user_id'];
+  echo '<div class="alert">'.$_SESSION['event_id'].'</div>';
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title> Tasks </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="todo_style.css" type="text/css">
+        <link rel="stylesheet" href="todostyle.css" type="text/css">
         <script src="https://kit.fontawesome.com/238d96934e.js" crossorigin="anonymous"></script>
         <script src="todo.js"></script>
     </head>

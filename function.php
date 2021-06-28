@@ -35,3 +35,9 @@ function random_num($length)
     }
     return $text;
 }
+
+//$id = $_GET['id']; 
+//$query = "DELETE FROM events WHERE `event_id`='.$id.'";
+//mysqli_query($con,$query);
+//header("Location: dashboard.php");
+?> 

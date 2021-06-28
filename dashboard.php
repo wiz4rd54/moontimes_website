@@ -17,9 +17,19 @@ session_start();
     <head>
         <title>Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="dashboard_style.css" type="text/css">
+        <link rel="stylesheet" href="dashboardstyle.css" type="text/css">
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
-        <script src="todo.js"></script>
+        <!--<script src="todo.js"></script>-->
+        <script>
+            function myFunction(x) {
+                var ele = document.getElementById(x);
+                if (ele.style.display === "none") {
+                    ele.style.display = "table-cell";
+                } else {
+                    ele.style.display = "none";
+                }
+            };
+        </script>
     </head>
     <body>
         <nav class="navbar">
@@ -44,21 +54,38 @@ session_start();
             ?>
                 <table class="data">
                 <tr>
+                    <td>Event Number</td>
                     <td>Event Name</td>
                     <td>Event date</td>
                     <td>Status </td>
-                    <td>Customize</td>
+                    <td colspan="2">Customize</td>
                 </tr>
             <?php
                 $i = 0;
                 while( $row = mysqli_fetch_assoc($result) )
-                {
+                {   
+                    $event_id = $row['event_id'];
             ?>
                 <tr>
+                    <td><?php echo $i+1;?></td>
                     <td><?php echo $row["eventType"]; ?></td>
                     <td><?php echo $row["eventDate"]; ?></td>
                     <td><?php echo "status update";?></td>
-                    <td><?php echo '<a href="todo_event.php" class="edit">Edit</a>'; ?></td>
+                    <td><?php echo '<button id="edit" onclick="myFunction('.$i.')">EDIT</button>'; ?></td>
+                    <td><?php echo '<a href="/delete.php?id='.$row['event_id'].'"/>Delete</a>';?></td>
+                </tr>
+                <tr>
+                    <td colspan="6" id="<?php echo $i;?>" style="display:none">
+                    <?php 
+                        $query1 = "SELECT * FROM events WHERE `event_id`='$event_id'";
+                        $result1 = mysqli_query($con,$query1);
+                        $event_detail = mysqli_fetch_assoc($result1);
+                        echo $event_detail['eventType'];
+                        echo $event_detail['eventDate'];
+                        echo $event_detail['eventPlace'];
+                        echo $event_detail['eventBudget'];
+                        echo $event_detail['eventDescription'];
+                    ?> </td>
                 </tr>
             <?php
                 $i++;

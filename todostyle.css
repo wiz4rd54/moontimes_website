@@ -102,3 +102,11 @@ body {
   width: 90%;
   background:rgba(0, 0, 0, 0.1)
 }
+
+.alert {
+  position: absolute;
+  top: 10;
+  padding: 5px;
+  color: black;
+  border: 1px solid #000;
+}
