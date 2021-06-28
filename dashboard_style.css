@@ -143,7 +143,9 @@ body {
 
 /* -------------------------------------- Table todo edit button ------------------------ */
 .edit {
-    padding: 3px;
+    text-decoration: none;
+    padding: 8px 15px;
     background: #5c3d94;
     color: #e0e5ec;
+    border-radius: 5px;
 }

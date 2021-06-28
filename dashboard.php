@@ -16,7 +16,8 @@ session_start();
 <html>
     <head>
         <title>Dashboard</title>
-        <link rel="stylesheet" href="dashboard-ui.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dashboard_style.css" type="text/css">
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
         <script src="todo.js"></script>
     </head>
