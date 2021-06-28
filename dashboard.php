@@ -17,7 +17,7 @@ session_start();
     <head>
         <title>Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="dashboardstyle.css" type="text/css">
+        <link rel="stylesheet" href="dashboard_style.css" type="text/css">
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
         <!--<script src="todo.js"></script>-->
         <script>
@@ -29,24 +29,25 @@ session_start();
                     ele.style.display = "none";
                 }
             };
+            function get_date(){
+                var date = new Date();
+                var n = date.toDateString();
+                document.getElementById("date").innerHTML = n;
+            };
         </script>
     </head>
-    <body>
+    <body onload="get_date()">
         <nav class="navbar">
             <h1 id="username"><?php echo $user_data['user_name']."'s";?> Dashboard </h1>
-            <ul>
-                <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
-                <li><a href="setting.php"><i class="fas fa-cog"></i></a></li>
+            
+            <ul> 
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
                 <li><a href="newevent.php"><i class="fas fa-plus"></i></a></li>
+                <li><a href="dashboard.php"><i class="fas fa-home"></i></a></li>
+                <p id="date"></p>
             </ul>
         </nav>
         <main>
-            <!--<section class="quickstat">
-                <div class="stats"> Event Budget </div>
-                <div class="stats"> Cost </div>
-                <div class="stats"> Date </div>
-            </section>-->
             <table border="1">
             <?php
                 if(mysqli_num_rows($result)>0) 
@@ -54,11 +55,11 @@ session_start();
             ?>
                 <table class="data">
                 <tr>
-                    <td>Event Number</td>
-                    <td>Event Name</td>
-                    <td>Event date</td>
-                    <td>Status </td>
-                    <td colspan="2">Customize</td>
+                    <th>Sr. No</th>
+                    <th>Event Name</th>
+                    <th>Event date</th>
+                    <th>Status </th>
+                    <th colspan="3">Customize</th>
                 </tr>
             <?php
                 $i = 0;
@@ -67,25 +68,28 @@ session_start();
                     $event_id = $row['event_id'];
             ?>
                 <tr>
-                    <td><?php echo $i+1;?></td>
+                    <td width="50px"><?php echo $i+1;?></td>
                     <td><?php echo $row["eventType"]; ?></td>
-                    <td><?php echo $row["eventDate"]; ?></td>
-                    <td><?php echo "status update";?></td>
-                    <td><?php echo '<button id="edit" onclick="myFunction('.$i.')">EDIT</button>'; ?></td>
-                    <td><?php echo '<a href="/delete.php?id='.$row['event_id'].'"/>Delete</a>';?></td>
+                    <td><?php echo date_format( date_create($row["eventDate"]),"d-m-Y"); ?></td>
+                    <td><?php echo $row["eventStatus"];?></td>
+                    <td style="width:80px;text-align:center;"><?php echo '<a id="edit" href="/Moontimes/moontimes_website/edit.php?id='.$row['event_id'].'"/>MORE</a>';?></td>
+                    <td style="width:8%;text-align:center;"><?php echo '<a id="delete" href="/Moontimes/moontimes_website/delete.php?id='.$row['event_id'].'"/>DELETE</a>';?></td>
+                    <td width="2%"><?php echo '<i onclick="myFunction('.$i.')" class="fas fa-sort-down"></i>'; ?></td>
                 </tr>
                 <tr>
-                    <td colspan="6" id="<?php echo $i;?>" style="display:none">
+                    <td colspan="7" id="<?php echo $i;?>" style="display:none" class="event_Data">
+                    <ul class="info">
                     <?php 
                         $query1 = "SELECT * FROM events WHERE `event_id`='$event_id'";
                         $result1 = mysqli_query($con,$query1);
                         $event_detail = mysqli_fetch_assoc($result1);
-                        echo $event_detail['eventType'];
-                        echo $event_detail['eventDate'];
-                        echo $event_detail['eventPlace'];
-                        echo $event_detail['eventBudget'];
-                        echo $event_detail['eventDescription'];
-                    ?> </td>
+                        echo '<li>Event Name :- '.$event_detail['eventType'].'</li>';
+                        echo '<li>Event Date :- '.date_format( date_create($event_detail["eventDate"]),"d-m-Y").'</li>';
+                        echo '<li>Event Status :- <span class="status">'.$event_detail['eventStatus'].'</span></li>';
+                        echo '<li>Event Place :- '.$event_detail['eventPlace'].'</li>';
+                        echo '<li>Event Budget :- '.$event_detail['eventBudget'].'</li>';
+                        echo '<li>Event Description :- '.$event_detail['eventDescription'].'</li>';
+                    ?> </ul></td>
                 </tr>
             <?php
                 $i++;

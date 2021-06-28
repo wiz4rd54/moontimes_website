@@ -15,7 +15,7 @@ session_start();
         $event_budget = $_POST['event_Budget'];
         $event_des = $_POST['event_Description'];
         $event_id = random_num(20);
-        $query = "INSERT INTO `events` (`user_id`,`event_id`,`eventType`,`eventDate`,`eventPlace`,`eventBudget`,`eventDescription`) VALUES ('$user_id','$event_id','$event_type','$event_date','$event_place','$event_budget','$event_des')";
+        $query = "INSERT INTO `events` (`user_id`,`event_id`,`eventType`,`eventDate`,`eventStatus`,`eventPlace`,`eventBudget`,`eventDescription`) VALUES ('$user_id','$event_id','$event_type','$event_date','Upcoming','$event_place','$event_budget','$event_des')";
         $result = mysqli_query($con,$query);
         if ($result)
         {
@@ -28,7 +28,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Signup</title>
+        <title>New Event</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="newevent.css" type="text/css">        
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@ session_start();
         <nav>
             <p> <a href="dashboard.php"> <i class="fas fa-arrow-circle-left"></i> Back </a></p>
         </nav>
-        <form method="post" class="form">
+        <form method="POST" class="form">
             <h1> Create New Event </h1>
             <input class="input" type="text" placeholder="Event name" name="event_Type" required>
             <input class="input" type="date" name="event_Date" required>

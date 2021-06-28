@@ -3,7 +3,7 @@ session_start();
     include("connection.php");
     include("functions.php");
 
-    $id = $_GET['id']; 
+    $id = $_GET['id'];
     $query = "DELETE FROM `events` WHERE `event_id`='$id'";
     $result = mysqli_query($con,$query);
     if ($result)
@@ -11,7 +11,8 @@ session_start();
         header("Location: dashboard.php");
         die;
     }
-    else {
-        echo $id;
+    else 
+    {
+        echo "Could Not perform the requested action !!";
     }
 ?>
