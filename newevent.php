@@ -30,7 +30,7 @@ session_start();
     <head>
         <title>New Event</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="newevent.css" type="text/css">        
+        <link rel="stylesheet" href="new-event.css" type="text/css">        
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
     </head>
     <body>
