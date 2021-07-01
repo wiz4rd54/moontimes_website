@@ -3,7 +3,7 @@
     <head>
         <title> Moonlight Event Planners </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main_style.css" type="text/css">
+        <link rel="stylesheet" href="mainstyle.css" type="text/css">
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="docSlider.css">
     </head>
@@ -15,7 +15,6 @@
             <li><a href="#home"> Home </a></li>
             <li><a href="#about"> About </a></li>
             <li><a href="#review"> Reviews </a></li>
-            <li><a href="#pricing"> Pricing </a></li>
             <li><a href="#contact"> Contact </a></li>
             <li><a href="login.php"> Login </a></li>
           </ul>
@@ -44,14 +43,103 @@
             </p>
           </div>
         </section>
-        <section class="section inner" id="review">
-          <div class="review1"> hello </div>
-          <div class="review2"> hello </div>
-          <div class="review3"> hello </div>
-          <div class="heading"> hello </div>
+        <section class="section inner">
+          <div class="container">
+            <h1> Customer Reviews </h1>
+          <div class="card">
+            <div class="box">
+              <div class="content">
+                <h2>R1</h2>
+                <h3>King Arthur</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="box">
+              <div class="content">
+                <h2>R2</h2>
+                <h3>James Bond</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="box">
+              <div class="content">
+                <h2>R3</h2>
+                <h3>John Doe</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam velit? Iure nemo labore inventore?</p>
+              </div>
+            </div>
+          </div>
+          </div>
         </section>
+
         <section class="section innner">
-          <h3>Page 4</h3>
+          <div class="heading">
+            <h1> Send a message!</h1>
+          </div>
+          <div class="form">
+            <form method="POST" >
+              <input class="input" type="email" placeholder="e-mail" name="email">
+              <input class="input" type="text" placeholder="Name" name="name">
+              <textarea class="textarea" placeholder="Your message here......" name="message" cols="50" rows="5"></textarea>
+              <input class="btn" type="submit" value="Send">
+            </form>
+          </div>
+          <div class="footer">
+            <div class="social">
+              <span class="icon"><i class="fab fa-facebook-f"></i></span>
+              <span class="icon"><i class="fab fa-google"></i></span>
+              <span class="icon"><i class="fab fa-instagram-square"></i></span>
+            </div>
+            <div class="area1 area">
+              <span class="listhead">Product</span>
+              <ul>
+                <li>Premium</li>
+                <li>Status</li>
+              </ul>
+            </div>
+            <div class="area2 area">
+            <span class="listhead">Company</span>
+              <ul>
+                <li>About</li>
+                <li>Jobs</li>
+                <li>Branding</li>
+                <li>Newsroom</li>
+              </ul>
+            </div>
+            <div class="area3 area">
+            <span class="listhead">Resources</span>
+              <ul>
+                <li>College</li>
+                <li>Support</li>
+                <li>Safety</li>
+                <li>Blog</li>
+                <li>Feedback</li>
+                <li>Developers</li>
+              </ul>
+            </div>
+            <div class="area4 area">
+            <span class="listhead">Policies</span>
+              <ul>
+                <li>Terms</li>
+                <li>Privacy</li>
+                <li>Guidelines</li>
+                <li>Licenses</li>
+                <li>Moderation</li>
+              </ul>
+            </div>
+            <div class="area5">
+              <img src="images/logoLight.svg">
+              <a href="login.php"> Login </a>
+              <a href="signup.php"> Signup </a>
+              <span> Made By Bhagirath </span>
+            </div>
+          </div>
         </section>
       </div>
       <script src="docSlider.min.js"></script>
