@@ -1,9 +1,50 @@
+<?php
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "Moontimes_Database";
+
+$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+if (!$conn)
+{
+    die("Failed to Connect !");
+}
+
+if ($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    //something was posted
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $msg = $_POST['message'];
+
+    if(!empty($email) && !empty($name) && !is_numeric($name))
+    {
+        // save to database;
+        $query = "INSERT INTO `messages` (`email_id`,`name`,`message`) VALUES ('$email','$name','$msg')";
+        $result = mysqli_query($conn,$query);
+        if ($result)
+        {
+          echo '<div class="alert"> We have received your message. We will reach out to you soon </div>';
+          header("Location: http://localhost/Moontimes/moontimes_website/main.php#contact");
+        }
+        else
+        {
+          echo '<div class="alert"> Please try again after few minutes </div>';
+        }
+    }
+    else
+    {
+        echo '<div class="alert"> Please enter valid information. </div>';
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <title> Moonlight Event Planners </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="mainstyle.css" type="text/css">
+        <link rel="stylesheet" href="main_style.css" type="text/css">
         <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="docSlider.css">
     </head>
@@ -26,6 +67,7 @@
             <p id="wheel"> Scroll <a href="#about"><i class="fas fa-long-arrow-alt-right"></i></a></p>
           </div>
         </section>
+
         <section id="about" class="section inner">
           <div class="image2">
             <img src="images/img1.svg">
@@ -43,7 +85,8 @@
             </p>
           </div>
         </section>
-        <section class="section inner">
+
+        <section id="reviews" class="section inner">
           <div class="container">
             <h1> Customer Reviews </h1>
           <div class="card">
@@ -78,15 +121,15 @@
           </div>
         </section>
 
-        <section class="section innner">
+        <section id="contact" class="section innner">
           <div class="heading">
             <h1> Send a message!</h1>
           </div>
           <div class="form">
             <form method="POST" >
-              <input class="input" type="email" placeholder="e-mail" name="email">
-              <input class="input" type="text" placeholder="Name" name="name">
-              <textarea class="textarea" placeholder="Your message here......" name="message" cols="50" rows="5"></textarea>
+              <input class="input" type="email" placeholder="e-mail" name="email" required>
+              <input class="input" type="text" placeholder="Name" name="name" required>
+              <textarea class="textarea" placeholder="Your message here......" name="message" cols="50" rows="5" required></textarea>
               <input class="btn" type="submit" value="Send">
             </form>
           </div>

@@ -36,9 +36,11 @@ session_start();
     <head>
         <title>Signup</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="signupstyle.css" type="text/css">        
+        <link rel="stylesheet" href="signup_style.css" type="text/css">
+        <script src="https://kit.fontawesome.com/2fef570697.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    <a href="main.php" alt="HOME" class="home"><i class="fas fa-home"></i></a>
         <div class="container">
             <div class="div1">
                 <img src="images/logo4.svg">

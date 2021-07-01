@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 :root {
@@ -14,20 +14,6 @@
     6px 6px 25px 0 rgba(0, 0, 0, 0.2);
   --a-color: rgba(0,0,0,0.5);
 }
-
-[data-theme="dark"] {
-  --primary: #333;
-  --secondary: #e0e5ec;
-  --form-shadow: 30px 30px 77px #222222,
-    -30px -30px 77px #444444;
-  --input-shadow: inset 4px 4px 15px #222222,
-    inset -4px -4px 15px #444444;
-  --focus-shadow: 8px 8px 20px #222222,
-  -8px -8px 20px #444444;
-  --btn-shadow: 30px 30px 77px #222222,
-  -30px -30px 77px #444444;
-  --a-color : #fff;
-} 
 
 * {
     padding: 0;
@@ -71,7 +57,7 @@ body {
 }
 
 .div1 h1 {
-  font-family: "Satisfy";
+  font-family: "Parisienne";
   letter-spacing: 2px;
   color: #5c3d94;
   margin: 20px;
@@ -202,4 +188,19 @@ body {
     width: 200px;
     font-size: 1rem;
   }
+}
+
+.home {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  height: 50px;
+	width: 50px;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  text-align: center;
+	font-size: 20px;
+  box-shadow:2px 2px 15px rgba(180, 180, 180, 0.5);
+	border-radius: 50%;
 }
