@@ -46,11 +46,13 @@ session_start();
                     }
                 }
             }
-            echo "<div class='alert'> Wrong Credentials ! Try again. </div>";
+            //echo "<div class='alert'> Wrong Credentials ! Try again. </div>";
+            echo "<script> alert('Username or password incorrect') </script>";
         }
         else
         {
-            echo "<div class='alert'> Username or password entered is not correct </div>";
+            //echo "<div class='alert'> Username or password entered is not correct </div>";
+            echo "<script> alert('Username or password incorrect') </script>";
         }
     }
 ?>

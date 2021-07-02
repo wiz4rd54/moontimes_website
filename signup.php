@@ -26,7 +26,8 @@ session_start();
         }
         else
         {
-            echo "<div class='alert'> Please enter valid information. </div>";
+            //echo "<div class='alert'> Please enter valid information. </div>";
+            echo "<script> alert('Please enter valid information') </script>";
         }
     }
 ?>
@@ -54,7 +55,7 @@ session_start();
                 <input class="input" type="email" placeholder="E-mail" name="email" required>
                 <input class="input" type="text" placeholder="Username" name="user_name" required>
                 <input class="input" type="password" placeholder="Password" name="password" required>
-                <input class="input" type="password" placeholder="The first school you attended" name="security" required> 
+                <input class="input" type="password" placeholder="Security key (any key of your choice)" name="security" required> 
                 <input class="btn" type="submit" value="Sign-up"> 
             </form>
         </div>
